@@ -1,5 +1,7 @@
 # Phonebook
 simple phonebook application built using django framework performing CRUD operations.
+
+
 1-> Navigate to the Project Directory:
     cd your-project
 
