@@ -1,0 +1,33 @@
+<!-- phonebook_app/templates/phonebook_app/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Phonebook{% endblock %}</title>
+    <style>
+        .trr {
+        border: solid 1px #dbd1d1;
+    }
+    button{
+        border: solid 1px #dbd1d1;
+        background-color: lightblue;
+    }
+    </style>
+    <!-- Add your CSS links, scripts, etc. here -->
+</head>
+<body>
+    <header>
+        <h1>{% block header %}My Phonebook{% endblock %}</h1>
+        <!-- Add your navigation bar or other header elements here -->
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Add your footer elements here -->
+    </footer>
+</body>
+</html>

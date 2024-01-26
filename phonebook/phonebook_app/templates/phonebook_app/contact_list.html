@@ -1,0 +1,33 @@
+<!-- phonebook_app/templates/phonebook_app/contact_list.html -->
+{% extends 'phonebook_app/base.html' %}
+{% block title %}Contact List{% endblock %}
+
+{% block content %}
+  
+  
+  <h2>Contact List</h2>
+
+  <form method="get" action="{% url 'search_contact' %}">
+    <input type="text" name="q" placeholder="Search by name" value="{{ query }}">
+    <input type="submit" value="Search">
+  </form>
+
+  <table id="table" class="table table-hover">
+    <tr class="table-primary">
+      <th class="trr">Contact Name</th>
+      <th class="trr">Phone Number</th>
+      <th class="trr">Edit</th>
+      <th class="trr">Delete</th>
+    </tr>
+    {% for contact in contacts %}
+      <tr class="trr">
+        <td class="trr">{{ contact.name }}</td>
+        <td class="trr">{{ contact.phone_number }}</td>
+        <td><a href="{% url 'edit_contact' pk=contact.pk %}">Edit</a></td>
+        <td><a href="{% url 'delete_contact' pk=contact.pk %}">Delete</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <button><a href="{% url 'add_contact' %}">Add Contact</a></button> 
+{% endblock %}

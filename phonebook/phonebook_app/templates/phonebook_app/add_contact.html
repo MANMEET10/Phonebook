@@ -1,0 +1,14 @@
+<!-- phonebook_app/templates/phonebook_app/add_contact.html -->
+{% extends 'phonebook_app/base.html' %}
+
+{% block content %}
+  <h2>Add Contact</h2>
+
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+  </form>
+
+  <a href="{% url 'contact_list' %}">Back to Contact List</a>
+{% endblock %}
